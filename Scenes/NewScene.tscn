@@ -1,0 +1,162 @@
+[gd_scene load_steps=25 format=3 uid="uid://peuc1l04bpqn"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://dybft1q4bhtnl" path="res://PhysicsMaterials/PhysMat_Ground.tres" id="1_4pjek"]
+[ext_resource type="Script" uid="uid://ltx1plrrwijj" path="res://Scripts/Player/PlayerNode.cs" id="1_i8b7g"]
+[ext_resource type="Texture2D" uid="uid://nspqx14trs33" path="res://Sprites/Circle_32.png" id="3_4pjek"]
+[ext_resource type="PhysicsMaterial" uid="uid://6lx4cki5depb" path="res://PhysicsMaterials/PhysMat_Player.tres" id="3_wowvs"]
+[ext_resource type="Texture2D" uid="uid://dsbdb6j2il41f" path="res://Sprites/Player/STS_Sprite_PlayerCharacter_BigEyes_Cutout.png" id="4_i1ubu"]
+[ext_resource type="Script" uid="uid://ccrbcuno5duxy" path="res://Scripts/Player/DirectionFlipper.cs" id="4_io3br"]
+[ext_resource type="Script" uid="uid://scx6ad6w24sk" path="res://Scripts/Player/Movement.cs" id="4_ngt0p"]
+[ext_resource type="Texture2D" uid="uid://ei6ekc1wowq5" path="res://Sprites/TreeTemp.png" id="4_wowvs"]
+[ext_resource type="Texture2D" uid="uid://ba4rt1hpevcue" path="res://Sprites/TempHouse.png" id="5_i1ubu"]
+[ext_resource type="Texture2D" uid="uid://ddum1rwej3axo" path="res://Sprites/StarFriends/StarPower_Mini_Character.png" id="6_io3br"]
+[ext_resource type="Script" uid="uid://cvdsbfo0bcw80" path="res://Scripts/Player/Stars.cs" id="8_ngt0p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_io3br"]
+albedo_color = Color(0.36078432, 0.41568628, 0.14117648, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ngt0p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i8b7g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ixgti"]
+transparency = 1
+albedo_texture = ExtResource("4_i1ubu")
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_irfb3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6d61"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("3_4pjek")
+texture_filter = 0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i8b7g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngt0p"]
+transparency = 1
+albedo_texture = ExtResource("6_io3br")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ixgti"]
+material = SubResource("StandardMaterial3D_ngt0p")
+
+[sub_resource type="QuadMesh" id="QuadMesh_dnyai"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2f7qp"]
+transparency = 1
+albedo_texture = ExtResource("4_wowvs")
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_e2oi3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n75rc"]
+transparency = 1
+albedo_texture = ExtResource("5_i1ubu")
+texture_filter = 0
+
+[node name="NewScene" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, -0.5, 0)
+physics_material_override = ExtResource("1_4pjek")
+
+[node name="Ground" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_io3br")
+mesh = SubResource("BoxMesh_ngt0p")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+shape = SubResource("BoxShape3D_i8b7g")
+
+[node name="PlayerNode" type="Node3D" parent="." node_paths=PackedStringArray("movement")]
+script = ExtResource("1_i8b7g")
+movement = NodePath("Player_RigidBody3D")
+
+[node name="Player_RigidBody3D" type="RigidBody3D" parent="PlayerNode"]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+physics_material_override = ExtResource("3_wowvs")
+script = ExtResource("4_ngt0p")
+_moveSpeed = 100.0
+
+[node name="SpriteParentAndDirectionFlipper" type="Node3D" parent="PlayerNode/Player_RigidBody3D" node_paths=PackedStringArray("_movement")]
+script = ExtResource("4_io3br")
+_movement = NodePath("..")
+_leftRotation = Vector3(0, 11.7, 0)
+_rightRotation = Vector3(0, -11.7, 0)
+
+[node name="PlayerFront" type="MeshInstance3D" parent="PlayerNode/Player_RigidBody3D/SpriteParentAndDirectionFlipper"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0016283989, 0.623, 0.0020656586)
+material_override = SubResource("StandardMaterial3D_ixgti")
+mesh = SubResource("QuadMesh_irfb3")
+skeleton = NodePath("../../../..")
+
+[node name="PlayerBack" type="MeshInstance3D" parent="PlayerNode/Player_RigidBody3D/SpriteParentAndDirectionFlipper"]
+transform = Transform3D(-2, 0, -3.019916e-07, 0, 2, 0, 3.019916e-07, 0, -2, 0.0016283989, 0.623, 0.0020656586)
+material_override = SubResource("StandardMaterial3D_ixgti")
+mesh = SubResource("QuadMesh_irfb3")
+skeleton = NodePath("../../../..")
+
+[node name="PlayerGroundSprite" type="MeshInstance3D" parent="PlayerNode/Player_RigidBody3D/SpriteParentAndDirectionFlipper"]
+transform = Transform3D(0.44729495, 0, 0, 0, -1.0406814e-08, 1, 0, -0.23808017, -4.371139e-08, 0.0016283989, 0.0032370687, 0.0020656586)
+material_override = SubResource("StandardMaterial3D_x6d61")
+mesh = SubResource("QuadMesh_irfb3")
+skeleton = NodePath("../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerNode/Player_RigidBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0016283989, 0.49999994, 0.0020656586)
+shape = SubResource("CapsuleShape3D_i8b7g")
+debug_color = Color(0.85882354, 0.3254902, 0.42745098, 0.94509804)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="PlayerNode/Player_RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.96633565, -0.25728458, 0, 0.25728458, 0.96633565, 0, 0.545, 0)
+visible = false
+spring_length = -2.059
+
+[node name="Camera3D" type="Camera3D" parent="PlayerNode/Player_RigidBody3D/SpringArm3D"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.0016283989, 0.7497499, -2.0590425)
+fov = 101.24999
+
+[node name="StarFriendParent" type="Node3D" parent="PlayerNode/Player_RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5235833, 0.81331253, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerNode/Player_RigidBody3D/StarFriendParent"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+mesh = SubResource("QuadMesh_ixgti")
+
+[node name="PlayerStars" type="Node" parent="PlayerNode"]
+script = ExtResource("8_ngt0p")
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="Tree" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(-3, 0, 4.5298742e-07, 0, 3, 0, -4.5298742e-07, 0, -3, 1.5736284, 1.5, 1.3090657)
+mesh = SubResource("QuadMesh_dnyai")
+surface_material_override/0 = SubResource("StandardMaterial3D_2f7qp")
+
+[node name="Tree2" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(-3, 0, 4.5298742e-07, 0, 3, 0, -4.5298742e-07, 0, -3, -2.4263716, 1.5, 1.3090657)
+mesh = SubResource("QuadMesh_dnyai")
+surface_material_override/0 = SubResource("StandardMaterial3D_2f7qp")
+
+[node name="Tree3" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(-3, 0, 4.5298742e-07, 0, 3, 0, -4.5298742e-07, 0, -3, -3.4263716, 1.5, 5.309066)
+mesh = SubResource("QuadMesh_dnyai")
+surface_material_override/0 = SubResource("StandardMaterial3D_2f7qp")
+
+[node name="Tree4" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(-3, 0, 4.5298742e-07, 0, 3, 0, -4.5298742e-07, 0, -3, 2.5736284, 1.5, 5.309066)
+mesh = SubResource("QuadMesh_dnyai")
+surface_material_override/0 = SubResource("StandardMaterial3D_2f7qp")
+
+[node name="House" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(-5, 0, -1.509958e-07, 0, 3, 0, 7.54979e-07, 0, -1, -0.7782999, 1.4787948, 3.6510386)
+mesh = SubResource("QuadMesh_e2oi3")
+surface_material_override/0 = SubResource("StandardMaterial3D_n75rc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.5924492, 0.80560786, 0, -0.80560786, -0.5924492, 0.0016281605, 5.7484245, -3.5928655)

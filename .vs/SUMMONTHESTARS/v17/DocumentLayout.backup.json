@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "B:\\GameDev\\Jams\\PGM\\SummonTheStars_Godot\\summon-the-stars\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C568E6F2-1941-480C-A996-0E33984E430C}|SummonTheStars.csproj|b:\\gamedev\\jams\\pgm\\summonthestars_godot\\summon-the-stars\\scripts\\playernode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C568E6F2-1941-480C-A996-0E33984E430C}|SummonTheStars.csproj|solutionrelative:scripts\\playernode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C568E6F2-1941-480C-A996-0E33984E430C}|SummonTheStars.csproj|b:\\gamedev\\jams\\pgm\\summonthestars_godot\\summon-the-stars\\scripts\\bingo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C568E6F2-1941-480C-A996-0E33984E430C}|SummonTheStars.csproj|solutionrelative:scripts\\bingo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 199,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlayerNode.cs",
+              "DocumentMoniker": "B:\\GameDev\\Jams\\PGM\\SummonTheStars_Godot\\summon-the-stars\\Scripts\\PlayerNode.cs",
+              "RelativeDocumentMoniker": "Scripts\\PlayerNode.cs",
+              "ToolTip": "B:\\GameDev\\Jams\\PGM\\SummonTheStars_Godot\\summon-the-stars\\Scripts\\PlayerNode.cs",
+              "RelativeToolTip": "Scripts\\PlayerNode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T19:57:52.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Bingo.cs",
+              "DocumentMoniker": "B:\\GameDev\\Jams\\PGM\\SummonTheStars_Godot\\summon-the-stars\\Scripts\\Bingo.cs",
+              "RelativeDocumentMoniker": "Scripts\\Bingo.cs",
+              "ToolTip": "B:\\GameDev\\Jams\\PGM\\SummonTheStars_Godot\\summon-the-stars\\Scripts\\Bingo.cs",
+              "RelativeToolTip": "Scripts\\Bingo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T19:57:46.85Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
