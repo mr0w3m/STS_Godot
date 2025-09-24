@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://peuc1l04bpqn"]
+[gd_scene load_steps=28 format=3 uid="uid://peuc1l04bpqn"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://dybft1q4bhtnl" path="res://PhysicsMaterials/PhysMat_Ground.tres" id="1_4pjek"]
 [ext_resource type="Script" uid="uid://ltx1plrrwijj" path="res://Scripts/Player/PlayerNode.cs" id="1_i8b7g"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ba4rt1hpevcue" path="res://Sprites/TempHouse.png" id="5_i1ubu"]
 [ext_resource type="Texture2D" uid="uid://ddum1rwej3axo" path="res://Sprites/StarFriends/StarPower_Mini_Character.png" id="6_io3br"]
 [ext_resource type="Script" uid="uid://cvdsbfo0bcw80" path="res://Scripts/Player/Stars.cs" id="8_ngt0p"]
+[ext_resource type="PackedScene" uid="uid://cjbptn61pwa6x" path="res://Prefabs/Projectiles/Stars/StarProjectile_Rigidbody3D.tscn" id="10_ixgti"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_io3br"]
 albedo_color = Color(0.36078432, 0.41568628, 0.14117648, 1)
@@ -55,6 +56,10 @@ transparency = 1
 albedo_texture = ExtResource("5_i1ubu")
 texture_filter = 0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ixgti"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_irfb3"]
+
 [node name="NewScene" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -71,9 +76,10 @@ skeleton = NodePath("../..")
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
 shape = SubResource("BoxShape3D_i8b7g")
 
-[node name="PlayerNode" type="Node3D" parent="." node_paths=PackedStringArray("movement")]
+[node name="PlayerNode" type="Node3D" parent="." node_paths=PackedStringArray("movement", "stars")]
 script = ExtResource("1_i8b7g")
 movement = NodePath("Player_RigidBody3D")
+stars = NodePath("Player_RigidBody3D/PlayerStars")
 
 [node name="Player_RigidBody3D" type="RigidBody3D" parent="PlayerNode"]
 axis_lock_angular_x = true
@@ -84,7 +90,7 @@ script = ExtResource("4_ngt0p")
 _moveSpeed = 100.0
 
 [node name="SpriteParentAndDirectionFlipper" type="Node3D" parent="PlayerNode/Player_RigidBody3D" node_paths=PackedStringArray("_movement")]
-transform = Transform3D(0.98162717, 0, 0.190809, 0, 1, 0, -0.190809, 0, 0.98162717, 0, 0, 0)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("4_io3br")
 _movement = NodePath("..")
 
@@ -106,6 +112,9 @@ material_override = SubResource("StandardMaterial3D_x6d61")
 mesh = SubResource("QuadMesh_irfb3")
 skeleton = NodePath("../../../..")
 
+[node name="ProjectileSpawnTransform_Node3D" type="Node3D" parent="PlayerNode/Player_RigidBody3D/SpriteParentAndDirectionFlipper"]
+transform = Transform3D(-4.371139e-08, -0.7071067, -0.7071067, 0, 0.7071067, -0.7071067, 1, -3.0908616e-08, -3.0908616e-08, 0, 3, 0)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerNode/Player_RigidBody3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0016283989, 0.49999994, 0.0020656586)
 shape = SubResource("CapsuleShape3D_i8b7g")
@@ -116,6 +125,10 @@ transform = Transform3D(1, 0, 0, 0, 0.96633565, -0.25728458, 0, 0.25728458, 0.96
 visible = false
 spring_length = -2.059
 
+[node name="Camera3D" type="Camera3D" parent="PlayerNode/Player_RigidBody3D/SpringArm3D"]
+transform = Transform3D(-1, -1.2676953e-09, 9.218412e-08, -1.2676953e-09, 1.0000001, 1.4901161e-08, -9.218413e-08, -1.4901161e-08, -1.0000001, 0.0016284585, 0.74974996, -2.0590425)
+fov = 101.24999
+
 [node name="StarFriendParent" type="Node3D" parent="PlayerNode/Player_RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5235833, 0.81331253, 0)
 
@@ -123,12 +136,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5235833, 0.81331253, 0)
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 mesh = SubResource("QuadMesh_ixgti")
 
-[node name="Camera3D" type="Camera3D" parent="PlayerNode/Player_RigidBody3D"]
-transform = Transform3D(-1, -2.9802322e-08, 8.940697e-08, 2.2492534e-08, 0.9663357, 0.2572846, -8.940697e-08, 0.25728458, -0.96633565, 0.0016284585, 1.7992699, -1.7968271)
-fov = 101.24999
-
-[node name="PlayerStars" type="Node" parent="PlayerNode"]
+[node name="PlayerStars" type="Node3D" parent="PlayerNode/Player_RigidBody3D" node_paths=PackedStringArray("_projectileLaunchPos")]
 script = ExtResource("8_ngt0p")
+_projectileLaunchPos = NodePath("../SpriteParentAndDirectionFlipper/ProjectileSpawnTransform_Node3D")
+_starProjectilePrefab = ExtResource("10_ixgti")
 
 [node name="Environment" type="Node" parent="."]
 
@@ -159,3 +170,22 @@ surface_material_override/0 = SubResource("StandardMaterial3D_n75rc")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.5924492, 0.80560786, 0, -0.80560786, -0.5924492, 0.0016281605, 5.7484245, -3.5928655)
+
+[node name="BoxNumber2" type="RigidBody3D" parent="." groups=["Enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7023722, 0.4967487, 0)
+
+[node name="Collision_001" type="CollisionShape3D" parent="BoxNumber2"]
+shape = SubResource("BoxShape3D_ixgti")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BoxNumber2/Collision_001"]
+mesh = SubResource("BoxMesh_irfb3")
+
+[node name="BoxNumber1" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6428103, 0.5001996, 0)
+
+[node name="CollisionShape" type="CollisionShape3D" parent="BoxNumber1"]
+shape = SubResource("BoxShape3D_ixgti")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BoxNumber1"]
+mesh = SubResource("BoxMesh_irfb3")
+skeleton = NodePath("../CollisionShape")

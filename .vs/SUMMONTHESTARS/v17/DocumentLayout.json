@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|b:\\gamedev\\jams\\pgm\\stsgodotgitrepo\\sts_godot\\scripts\\player\\directionflipper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|solutionrelative:scripts\\player\\directionflipper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|b:\\gamedev\\jams\\pgm\\stsgodotgitrepo\\sts_godot\\scripts\\player\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|solutionrelative:scripts\\player\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|b:\\gamedev\\jams\\pgm\\stsgodotgitrepo\\sts_godot\\scripts\\enums\\enumslisted.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|solutionrelative:scripts\\enums\\enumslisted.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|b:\\gamedev\\jams\\pgm\\stsgodotgitrepo\\sts_godot\\scripts\\stardata\\stardata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|solutionrelative:scripts\\stardata\\stardata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|b:\\gamedev\\jams\\pgm\\stsgodotgitrepo\\sts_godot\\scripts\\player\\playernode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|solutionrelative:scripts\\player\\playernode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|b:\\gamedev\\jams\\pgm\\stsgodotgitrepo\\sts_godot\\scripts\\projectiles\\collisionchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|solutionrelative:scripts\\projectiles\\collisionchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|b:\\gamedev\\jams\\pgm\\stsgodotgitrepo\\sts_godot\\scripts\\projectiles\\starprojectile_mini.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|solutionrelative:scripts\\projectiles\\starprojectile_mini.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|b:\\gamedev\\jams\\pgm\\stsgodotgitrepo\\sts_godot\\scripts\\player\\stars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,78 +31,55 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DirectionFlipper.cs",
-              "DocumentMoniker": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Player\\DirectionFlipper.cs",
-              "RelativeDocumentMoniker": "Scripts\\Player\\DirectionFlipper.cs",
-              "ToolTip": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Player\\DirectionFlipper.cs",
-              "RelativeToolTip": "Scripts\\Player\\DirectionFlipper.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCsAAABrAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T21:46:52.493Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EnumsListed.cs",
-              "DocumentMoniker": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Enums\\EnumsListed.cs",
-              "RelativeDocumentMoniker": "Scripts\\Enums\\EnumsListed.cs",
-              "ToolTip": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Enums\\EnumsListed.cs",
-              "RelativeToolTip": "Scripts\\Enums\\EnumsListed.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAAAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T21:22:55.265Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Movement.cs",
-              "DocumentMoniker": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Player\\Movement.cs",
-              "RelativeDocumentMoniker": "Scripts\\Player\\Movement.cs",
-              "ToolTip": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Player\\Movement.cs",
-              "RelativeToolTip": "Scripts\\Player\\Movement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T21:21:00.586Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "StarData.cs",
-              "DocumentMoniker": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\StarData\\StarData.cs",
-              "RelativeDocumentMoniker": "Scripts\\StarData\\StarData.cs",
-              "ToolTip": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\StarData\\StarData.cs",
-              "RelativeToolTip": "Scripts\\StarData\\StarData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T20:04:43.56Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "PlayerNode.cs",
               "DocumentMoniker": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Player\\PlayerNode.cs",
               "RelativeDocumentMoniker": "Scripts\\Player\\PlayerNode.cs",
               "ToolTip": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Player\\PlayerNode.cs",
               "RelativeToolTip": "Scripts\\Player\\PlayerNode.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T19:56:19.781Z"
+              "WhenOpened": "2025-09-23T19:56:19.781Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
+              "Title": "CollisionChecker.cs",
+              "DocumentMoniker": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Projectiles\\CollisionChecker.cs",
+              "RelativeDocumentMoniker": "Scripts\\Projectiles\\CollisionChecker.cs",
+              "ToolTip": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Projectiles\\CollisionChecker.cs",
+              "RelativeToolTip": "Scripts\\Projectiles\\CollisionChecker.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwCwAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T21:39:21.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StarProjectile_Mini.cs",
+              "DocumentMoniker": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Projectiles\\StarProjectile_Mini.cs",
+              "RelativeDocumentMoniker": "Scripts\\Projectiles\\StarProjectile_Mini.cs",
+              "ToolTip": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Projectiles\\StarProjectile_Mini.cs",
+              "RelativeToolTip": "Scripts\\Projectiles\\StarProjectile_Mini.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAACbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T19:44:07.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Stars.cs",
               "DocumentMoniker": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Player\\Stars.cs",
               "RelativeDocumentMoniker": "Scripts\\Player\\Stars.cs",
               "ToolTip": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Player\\Stars.cs",
               "RelativeToolTip": "Scripts\\Player\\Stars.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwDkAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T19:55:23.798Z"
+              "WhenOpened": "2025-09-23T19:55:23.798Z",
+              "EditorCaption": ""
             }
           ]
         }
