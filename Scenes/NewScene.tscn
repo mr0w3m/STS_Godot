@@ -84,13 +84,12 @@ script = ExtResource("4_ngt0p")
 _moveSpeed = 100.0
 
 [node name="SpriteParentAndDirectionFlipper" type="Node3D" parent="PlayerNode/Player_RigidBody3D" node_paths=PackedStringArray("_movement")]
+transform = Transform3D(0.98162717, 0, 0.190809, 0, 1, 0, -0.190809, 0, 0.98162717, 0, 0, 0)
 script = ExtResource("4_io3br")
 _movement = NodePath("..")
-_leftRotation = Vector3(0, 11.7, 0)
-_rightRotation = Vector3(0, -11.7, 0)
 
 [node name="PlayerFront" type="MeshInstance3D" parent="PlayerNode/Player_RigidBody3D/SpriteParentAndDirectionFlipper"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0016283989, 0.623, 0.0020656586)
+transform = Transform3D(-2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0016283989, 0.623, 0.0020656586)
 material_override = SubResource("StandardMaterial3D_ixgti")
 mesh = SubResource("QuadMesh_irfb3")
 skeleton = NodePath("../../../..")
@@ -117,16 +116,16 @@ transform = Transform3D(1, 0, 0, 0, 0.96633565, -0.25728458, 0, 0.25728458, 0.96
 visible = false
 spring_length = -2.059
 
-[node name="Camera3D" type="Camera3D" parent="PlayerNode/Player_RigidBody3D/SpringArm3D"]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.0016283989, 0.7497499, -2.0590425)
-fov = 101.24999
-
 [node name="StarFriendParent" type="Node3D" parent="PlayerNode/Player_RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5235833, 0.81331253, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerNode/Player_RigidBody3D/StarFriendParent"]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 mesh = SubResource("QuadMesh_ixgti")
+
+[node name="Camera3D" type="Camera3D" parent="PlayerNode/Player_RigidBody3D"]
+transform = Transform3D(-1, -2.9802322e-08, 8.940697e-08, 2.2492534e-08, 0.9663357, 0.2572846, -8.940697e-08, 0.25728458, -0.96633565, 0.0016284585, 1.7992699, -1.7968271)
+fov = 101.24999
 
 [node name="PlayerStars" type="Node" parent="PlayerNode"]
 script = ExtResource("8_ngt0p")

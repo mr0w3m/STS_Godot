@@ -18,11 +18,11 @@ public partial class Movement : RigidBody3D
         this.SetAxisVelocity(direction * _moveSpeed * (float)delta);
         
 
-        if (direction.X > 0)
+        if (direction.X > 0.1f)
         {
             _currentDirection = Direction.left;
         }
-        else
+        else if (direction.X < -0.1f)
         {
             _currentDirection = Direction.right;
         }
