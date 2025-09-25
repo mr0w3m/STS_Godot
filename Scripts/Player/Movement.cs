@@ -8,14 +8,16 @@ public partial class Movement : RigidBody3D
 
     private Direction _currentDirection;
 
+    private Vector3 _targetMovementVector;
+
     public Direction currentDirection
     {
         get { return _currentDirection; }
     }
 
-    public void MoveInDirection(Vector3 direction, double delta)
+    public void MoveInDirection(Vector3 direction)
     {
-        this.SetAxisVelocity(direction * _moveSpeed * (float)delta);
+        _targetMovementVector = direction.Normalized();
         
 
         if (direction.X > 0.1f)
@@ -26,5 +28,17 @@ public partial class Movement : RigidBody3D
         {
             _currentDirection = Direction.right;
         }
+    }
+
+    public void StopMovement()
+    {
+        _targetMovementVector = Vector3.Zero;
+    }
+
+    public override void _PhysicsProcess(double delta)
+    {
+        base._PhysicsProcess(delta);
+
+        this.SetAxisVelocity(_targetMovementVector * _moveSpeed * (float)delta);
     }
 }

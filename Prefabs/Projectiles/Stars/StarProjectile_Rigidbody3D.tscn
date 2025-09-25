@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d2tfnfgkh3cwf" path="res://Scripts/Projectiles/StarProjectile_Mini.cs" id="1_asgq2"]
 [ext_resource type="Texture2D" uid="uid://jkir0f7r11rf" path="res://Sprites/StarFriends/StarBoi.png" id="2_osku4"]
-[ext_resource type="Script" uid="uid://cqwhjddq36n6p" path="res://Scripts/Projectiles/CollisionChecker.cs" id="3_osku4"]
+[ext_resource type="Script" uid="uid://cqwhjddq36n6p" path="res://Scripts/Utility/CollisionChecker.cs" id="3_osku4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uao2k"]
 transparency = 1
