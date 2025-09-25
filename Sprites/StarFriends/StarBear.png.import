@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cae7xr1gai2v5"
-path="res://.godot/imported/Icon_StarPower_Mini.png-369c3c134c976893212251c14c4934c5.ctex"
+uid="uid://c8bsb06xmfe7h"
+path="res://.godot/imported/StarBear.png-b71cce9c4d05c46b1b5801a223dea72c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/StarFriends/Icon_StarPower_Mini.png"
-dest_files=["res://.godot/imported/Icon_StarPower_Mini.png-369c3c134c976893212251c14c4934c5.ctex"]
+source_file="res://Sprites/StarFriends/StarBear.png"
+dest_files=["res://.godot/imported/StarBear.png-b71cce9c4d05c46b1b5801a223dea72c.ctex"]
 
 [params]
 

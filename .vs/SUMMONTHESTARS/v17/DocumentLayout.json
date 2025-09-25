@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|b:\\gamedev\\jams\\pgm\\stsgodotgitrepo\\sts_godot\\scripts\\player\\playernode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|solutionrelative:scripts\\player\\playernode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|b:\\gamedev\\jams\\pgm\\stsgodotgitrepo\\sts_godot\\scripts\\projectiles\\collisionchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|solutionrelative:scripts\\projectiles\\collisionchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|b:\\gamedev\\jams\\pgm\\stsgodotgitrepo\\sts_godot\\scripts\\enemy\\enemy_base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|solutionrelative:scripts\\enemy\\enemy_base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|b:\\gamedev\\jams\\pgm\\stsgodotgitrepo\\sts_godot\\scripts\\projectiles\\starprojectile_mini.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|solutionrelative:scripts\\projectiles\\starprojectile_mini.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|b:\\gamedev\\jams\\pgm\\stsgodotgitrepo\\sts_godot\\scripts\\projectiles\\collisionchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|solutionrelative:scripts\\projectiles\\collisionchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|b:\\gamedev\\jams\\pgm\\stsgodotgitrepo\\sts_godot\\scripts\\player\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|solutionrelative:scripts\\player\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|b:\\gamedev\\jams\\pgm\\stsgodotgitrepo\\sts_godot\\scripts\\utility\\freeaftertime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|solutionrelative:scripts\\utility\\freeaftertime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|b:\\gamedev\\jams\\pgm\\stsgodotgitrepo\\sts_godot\\scripts\\player\\stars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|solutionrelative:scripts\\player\\stars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|b:\\gamedev\\jams\\pgm\\stsgodotgitrepo\\sts_godot\\scripts\\player\\playernode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FBABC46-000F-492C-ABC5-AE4907100DAD}|SummonTheStars.csproj|solutionrelative:scripts\\player\\playernode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,17 +38,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 199,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "PlayerNode.cs",
               "DocumentMoniker": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Player\\PlayerNode.cs",
               "RelativeDocumentMoniker": "Scripts\\Player\\PlayerNode.cs",
               "ToolTip": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Player\\PlayerNode.cs",
               "RelativeToolTip": "Scripts\\Player\\PlayerNode.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-23T19:56:19.781Z",
               "IsPinned": true,
@@ -44,33 +56,72 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Enemy_Base.cs",
+              "DocumentMoniker": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Enemy\\Enemy_Base.cs",
+              "RelativeDocumentMoniker": "Scripts\\Enemy\\Enemy_Base.cs",
+              "ToolTip": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Enemy\\Enemy_Base.cs",
+              "RelativeToolTip": "Scripts\\Enemy\\Enemy_Base.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T03:19:06.178Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FreeAfterTime.cs",
+              "DocumentMoniker": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Utility\\FreeAfterTime.cs",
+              "RelativeDocumentMoniker": "Scripts\\Utility\\FreeAfterTime.cs",
+              "ToolTip": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Utility\\FreeAfterTime.cs",
+              "RelativeToolTip": "Scripts\\Utility\\FreeAfterTime.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T03:01:11.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Health.cs",
+              "DocumentMoniker": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Player\\Health.cs",
+              "RelativeDocumentMoniker": "Scripts\\Player\\Health.cs",
+              "ToolTip": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Player\\Health.cs",
+              "RelativeToolTip": "Scripts\\Player\\Health.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowA0AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T02:33:24.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "CollisionChecker.cs",
               "DocumentMoniker": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Projectiles\\CollisionChecker.cs",
               "RelativeDocumentMoniker": "Scripts\\Projectiles\\CollisionChecker.cs",
               "ToolTip": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Projectiles\\CollisionChecker.cs",
               "RelativeToolTip": "Scripts\\Projectiles\\CollisionChecker.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwCwAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-24T21:39:21.34Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "StarProjectile_Mini.cs",
               "DocumentMoniker": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Projectiles\\StarProjectile_Mini.cs",
               "RelativeDocumentMoniker": "Scripts\\Projectiles\\StarProjectile_Mini.cs",
               "ToolTip": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Projectiles\\StarProjectile_Mini.cs",
               "RelativeToolTip": "Scripts\\Projectiles\\StarProjectile_Mini.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAACbAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCkAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-24T19:44:07.52Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Stars.cs",
               "DocumentMoniker": "B:\\GameDev\\Jams\\PGM\\STSGodotGitRepo\\STS_Godot\\Scripts\\Player\\Stars.cs",
               "RelativeDocumentMoniker": "Scripts\\Player\\Stars.cs",

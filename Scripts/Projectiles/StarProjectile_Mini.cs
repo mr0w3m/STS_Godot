@@ -5,6 +5,8 @@ using System.Diagnostics;
 public partial class StarProjectile_Mini : RigidBody3D
 {
     [Export] private CollisionChecker _collisionChecker;
+    [Export] private int _damage;
+
 
     private float _initialVelocity = 10f;
     private float _acceleration = 5f;
@@ -29,8 +31,17 @@ public partial class StarProjectile_Mini : RigidBody3D
         this.ApplyCentralForce(_targetDirection * _acceleration * (float)delta);
     }
 
-    private void HitTarget()
+    private void HitTarget(Node3D body)
     {
+        foreach(Node n in body.GetChildren())
+        {
+            Health hp = n as Health;
+            if (hp != null)
+            {
+                hp.LoseHP(_damage);
+                Debug.Print("Had HP!");
+            }
+        }
         //currently destroys on hit but we can expand this to do damage by passing through a node and get componenting it for a health class or enemy class
         this.QueueFree();
     }

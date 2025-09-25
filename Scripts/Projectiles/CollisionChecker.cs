@@ -7,23 +7,21 @@ public partial class CollisionChecker : Area3D
 	[Export] private int _targetLayer;
 
 
-	public event Action Collided;
+	public event Action<Node3D> Collided;
 
-	private void OnCollided()
+	private void OnCollided(Node3D body)
 	{
 		if (Collided != null)
 		{
-			Collided.Invoke();
+			Collided.Invoke(body);
 		}
 	}
 
-	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		this.BodyEntered += OnBodyEntered;
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 
@@ -40,10 +38,10 @@ public partial class CollisionChecker : Area3D
 
             if (pbody!= null)
 			{
-				if ((pbody.CollisionLayer & _targetLayer) != 0)
+				if ((pbody.CollisionLayer & _targetLayer) != 0) //bitwise check for layer? does it really work?
 				{
 					Debug.Print("Collided with layer: " + _targetLayer);
-					OnCollided();
+					OnCollided(body);
                 }
 			}
         }

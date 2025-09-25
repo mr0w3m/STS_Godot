@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://b1tfoelyrdmwd"]
+
+[ext_resource type="Script" uid="uid://dhgey5fboemhr" path="res://Scripts/Enemy/Enemy_Base.cs" id="1_o63vc"]
+[ext_resource type="Texture2D" uid="uid://cp7k4pncdne2y" path="res://Sprites/Enemies/Enemy_Pile.png" id="2_n067c"]
+[ext_resource type="Script" uid="uid://bkqyvqcelxbxo" path="res://Scripts/Player/Health.cs" id="3_rgtgy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i60v8"]
+size = Vector3(1.6474609, 1.0609131, 0.31640625)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_efl1x"]
+transparency = 1
+albedo_texture = ExtResource("2_n067c")
+
+[sub_resource type="QuadMesh" id="QuadMesh_n75rc"]
+
+[node name="Enemy_Pile" type="Node" node_paths=PackedStringArray("health")]
+script = ExtResource("1_o63vc")
+health = NodePath("BoxNumber2/BoxHP")
+
+[node name="BoxNumber2" type="RigidBody3D" parent="." groups=["Enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1056757, 0.497, -2.8878348)
+
+[node name="Collision_001" type="CollisionShape3D" parent="BoxNumber2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.080566406, 0.03527829, 0)
+shape = SubResource("BoxShape3D_i60v8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BoxNumber2"]
+transform = Transform3D(-2.58, 0, 3.8956915e-07, 0, 2.58, 0, -3.8956915e-07, 0, -2.58, 0, 0.32487246, 0)
+material_override = SubResource("StandardMaterial3D_efl1x")
+mesh = SubResource("QuadMesh_n75rc")
+skeleton = NodePath("../Collision_001")
+
+[node name="BoxHP" type="Node" parent="BoxNumber2"]
+script = ExtResource("3_rgtgy")
+_startingHP = 3
