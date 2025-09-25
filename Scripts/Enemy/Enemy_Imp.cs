@@ -12,6 +12,10 @@ public partial class Enemy_Imp : Enemy_Base
 	private Node3D playerReference;
 	[Export]private float _attackRange = 0.5f;
 
+    [Export] private int _attackDamage;
+    [Export] private float _timeBetweenAttacks;
+	private float _attackTimer;
+
     public override void _Ready()
     {
         base._Ready();
@@ -32,17 +36,50 @@ public partial class Enemy_Imp : Enemy_Base
 			{
 				//Debug.Print(this.Name + " is in attack range, and attacking player");
 				_movement.StopMovement();
-			}
+				ProcessAttack(delta);
+
+            }
 			else
 			{
 				//move towards player
 				//Debug.Print("MovingTowardsPlayer");
 				_movement.MoveInDirection(directionToPlayer.Normalized());
+				_attackTimer = _timeBetweenAttacks;
 			}
 		}
 		else
 		{
 			_movement.StopMovement();
+		}
+	}
+	
+	private void ProcessAttack(double delta)
+	{
+		if (_attackTimer > 0)
+		{
+			_attackTimer -= (float)delta;
+		}
+		else
+		{
+			//attack
+			Attack();
+			_attackTimer = _timeBetweenAttacks;
+		}
+	}
+
+	private void Attack()
+	{
+		//Debug.Print("Attacking Player!");
+		if (playerReference != null)
+		{
+			foreach(Node n in playerReference.GetChildren())
+			{
+				Health hp = n as Health;
+				if (hp != null)
+				{
+					hp.LoseHP(_attackDamage);
+				}
+			}
 		}
 	}
 

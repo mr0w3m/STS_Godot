@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://peuc1l04bpqn"]
+[gd_scene load_steps=59 format=3 uid="uid://peuc1l04bpqn"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://dybft1q4bhtnl" path="res://PhysicsMaterials/PhysMat_Ground.tres" id="1_4pjek"]
 [ext_resource type="Script" uid="uid://ltx1plrrwijj" path="res://Scripts/Player/PlayerNode.cs" id="1_i8b7g"]
@@ -23,6 +23,9 @@
 [ext_resource type="Texture2D" uid="uid://c8hliljarq5lj" path="res://Sprites/Enemies/Enemy_Imp.png" id="17_2lpm4"]
 [ext_resource type="Texture2D" uid="uid://cp7k4pncdne2y" path="res://Sprites/Enemies/Enemy_Pile.png" id="17_i60v8"]
 [ext_resource type="Script" uid="uid://cqwhjddq36n6p" path="res://Scripts/Utility/CollisionChecker.cs" id="18_u70w4"]
+[ext_resource type="Script" uid="uid://dmjhtduryblmc" path="res://Scripts/UI/UI_Health.cs" id="24_08i0l"]
+[ext_resource type="PackedScene" uid="uid://cqhgipwu12yiq" path="res://Prefabs/UI/Health/ui_hp_texture_rect_prefab.tscn" id="25_2c5j8"]
+[ext_resource type="Script" uid="uid://c22sl6uxuh6mw" path="res://Scripts/UI/PlayerDeathUI.cs" id="26_2c5j8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_io3br"]
 albedo_color = Color(0.2519387, 0.29258174, 0.08889959, 1)
@@ -213,7 +216,7 @@ script = ExtResource("8_ngt0p")
 _projectileLaunchPos = NodePath("../SpriteParentAndDirectionFlipper/ProjectileSpawnTransform_Node3D")
 _starProjectilePrefab = ExtResource("10_ixgti")
 
-[node name="PlayerHP" type="Node" parent="PlayerNode"]
+[node name="PlayerHP" type="Node" parent="PlayerNode/Player_RigidBody3D"]
 script = ExtResource("11_irfb3")
 _startingHP = 5
 
@@ -491,6 +494,8 @@ texture = ExtResource("16_bex7o")
 script = ExtResource("16_efl1x")
 _movement = NodePath("RigidBody3D")
 _playerCheck = NodePath("RigidBody3D/PlayerCheck_CollisionShape3D")
+_attackDamage = 1
+_timeBetweenAttacks = 2.0
 health = NodePath("RigidBody3D/Imp_HP")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Enemy_Imp"]
@@ -607,3 +612,61 @@ skeleton = NodePath("../Collision_001")
 [node name="BoxHP" type="Node" parent="WIPFolder/Enemy_Pile/BoxNumber2"]
 script = ExtResource("11_irfb3")
 _startingHP = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" node_paths=PackedStringArray("_health")]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("24_08i0l")
+_health = NodePath("../../../PlayerNode/Player_RigidBody3D/PlayerHP")
+_uiHPPrefab = ExtResource("25_2c5j8")
+
+[node name="YouDied_Control" type="Control" parent="CanvasLayer/Control" node_paths=PackedStringArray("_health")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("26_2c5j8")
+_health = NodePath("../../../PlayerNode/Player_RigidBody3D/PlayerHP")
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control/YouDied_Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/YouDied_Control"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -86.69501
+offset_right = 248.0
+offset_bottom = 86.69501
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 72
+text = "You Died"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
