@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://peuc1l04bpqn"]
+[gd_scene load_steps=56 format=3 uid="uid://peuc1l04bpqn"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://dybft1q4bhtnl" path="res://PhysicsMaterials/PhysMat_Ground.tres" id="1_4pjek"]
 [ext_resource type="Script" uid="uid://ltx1plrrwijj" path="res://Scripts/Player/PlayerNode.cs" id="1_i8b7g"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://djsvxibseyheh" path="res://Scripts/Enemy/Enemy_Imp.cs" id="16_efl1x"]
 [ext_resource type="Texture2D" uid="uid://c8hliljarq5lj" path="res://Sprites/Enemies/Enemy_Imp.png" id="17_2lpm4"]
 [ext_resource type="Script" uid="uid://cqwhjddq36n6p" path="res://Scripts/Utility/CollisionChecker.cs" id="18_u70w4"]
+[ext_resource type="Script" uid="uid://d2ytu4ykl5yn1" path="res://Scripts/Enemy/Enemy_Horse.cs" id="21_dq870"]
 [ext_resource type="PackedScene" uid="uid://mbh31xxwq62u" path="res://Prefabs/Enemies/enemy_pile_single.tscn" id="22_ekaq6"]
 [ext_resource type="Script" uid="uid://dmjhtduryblmc" path="res://Scripts/UI/UI_Health.cs" id="24_08i0l"]
 [ext_resource type="PackedScene" uid="uid://cqhgipwu12yiq" path="res://Prefabs/UI/Health/ui_hp_texture_rect_prefab.tscn" id="25_2c5j8"]
@@ -104,6 +105,14 @@ size = Vector3(0.4248047, 0.73046875, 0.23535156)
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_u70w4"]
 height = 0.5
 radius = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekaq6"]
+transparency = 1
+albedo_texture = ExtResource("15_dnyai")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vwh46"]
+transparency = 1
+albedo_texture = ExtResource("15_dnyai")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u70w4"]
 size = Vector3(1.5273438, 1.6328125, 0.50878906)
@@ -478,7 +487,7 @@ texture = ExtResource("16_bex7o")
 script = ExtResource("16_efl1x")
 _playerCheck = NodePath("RigidBody3D/PlayerCheck_Area3D")
 _attackDamage = 1
-_timeBetweenAttacks = 2.0
+_timeBetweenAttacks = 0.5
 health = NodePath("RigidBody3D/Imp_HP")
 _movement = NodePath("RigidBody3D")
 
@@ -521,16 +530,15 @@ shape = SubResource("CylinderShape3D_u70w4")
 script = ExtResource("11_irfb3")
 _startingHP = 2
 
-[node name="Enemy_Horse" type="Node" parent="." node_paths=PackedStringArray("_playerCheck", "health", "_movement")]
-script = ExtResource("16_efl1x")
-_playerCheck = NodePath("RigidBody3D/PlayerCheck_Area3D")
-_attackDamage = 1
-_timeBetweenAttacks = 2.0
-health = NodePath("RigidBody3D/Imp_HP")
+[node name="Enemy_Horse" type="Node" parent="." node_paths=PackedStringArray("_playerCollisionCheck", "health", "_movement")]
+script = ExtResource("21_dq870")
+_playerCollisionCheck = NodePath("RigidBody3D/PlayerCheck_Area3D")
+_attackRange = 2.0
+health = NodePath("RigidBody3D/Horse_HP")
 _movement = NodePath("RigidBody3D")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Enemy_Horse"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.470109, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.299628, 0, 0)
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
@@ -544,12 +552,12 @@ _movement = NodePath("..")
 
 [node name="Forward_MeshInstance3D" type="MeshInstance3D" parent="Enemy_Horse/RigidBody3D/DirectionFlipper_Node3D"]
 transform = Transform3D(-1.325, 0, 2.0006945e-07, 0, 1.325, 0, -2.0006945e-07, 0, -1.325, 0, 0.4518658, 0)
-material_override = SubResource("StandardMaterial3D_bex7o")
+material_override = SubResource("StandardMaterial3D_ekaq6")
 mesh = SubResource("QuadMesh_pnlkv")
 
 [node name="Back_MeshInstance3D" type="MeshInstance3D" parent="Enemy_Horse/RigidBody3D/DirectionFlipper_Node3D"]
 transform = Transform3D(-1.325, 0, 0, 0, 1.325, 0, 0, 0, 1.325, 0, 0.4518658, 0)
-material_override = SubResource("StandardMaterial3D_bex7o")
+material_override = SubResource("StandardMaterial3D_vwh46")
 mesh = SubResource("QuadMesh_pnlkv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy_Horse/RigidBody3D"]
@@ -564,9 +572,9 @@ _targetLayer = 1
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy_Horse/RigidBody3D/PlayerCheck_Area3D"]
 shape = SubResource("CylinderShape3D_u70w4")
 
-[node name="Imp_HP" type="Node" parent="Enemy_Horse/RigidBody3D"]
+[node name="Horse_HP" type="Node" parent="Enemy_Horse/RigidBody3D"]
 script = ExtResource("11_irfb3")
-_startingHP = 2
+_startingHP = 10
 
 [node name="Enemy_PileSingle" parent="." instance=ExtResource("22_ekaq6")]
 
