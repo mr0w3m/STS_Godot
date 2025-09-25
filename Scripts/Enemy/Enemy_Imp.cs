@@ -4,7 +4,6 @@ using System.Diagnostics;
 
 public partial class Enemy_Imp : Enemy_Base
 {
-	[Export] private Movement _movement;
 	[Export] private CollisionChecker _playerCheck;
 
 

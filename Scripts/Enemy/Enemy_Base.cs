@@ -5,8 +5,9 @@ using System.Diagnostics;
 public partial class Enemy_Base : Node
 {
 	[Export] public Health health;
+    [Export] public Movement _movement;
 
-	public override void _Ready()
+    public override void _Ready()
 	{
 		health.Dead += Die;
 	}

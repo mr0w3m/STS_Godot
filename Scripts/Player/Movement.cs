@@ -15,6 +15,8 @@ public partial class Movement : RigidBody3D
         get { return _currentDirection; }
     }
 
+
+
     public void MoveInDirection(Vector3 direction)
     {
         _targetMovementVector = direction.Normalized();
@@ -33,6 +35,11 @@ public partial class Movement : RigidBody3D
     public void StopMovement()
     {
         _targetMovementVector = Vector3.Zero;
+    }
+
+    public void OverrideMovementSpeed(float overrideValue)
+    {
+        _moveSpeed = overrideValue;
     }
 
     public override void _PhysicsProcess(double delta)
