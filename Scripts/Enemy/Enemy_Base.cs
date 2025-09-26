@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Diagnostics;
 
-public partial class Enemy_Base : Node
+public partial class Enemy_Base : Node3D
 {
 	[Export] public Health health;
     [Export] public Movement _movement;

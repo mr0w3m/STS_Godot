@@ -59,7 +59,7 @@ public partial class Enemy_Pile : Enemy_Base
         RandomNumberGenerator random = new RandomNumberGenerator();
         Vector3 location = new Vector3(random.RandfRange(0.5f, 2), 0, random.RandfRange(0.5f, 2));
         location = location + _movement.GlobalPosition;
-        Node n = (Node)_pileEnemySinglePrefab.Instantiate();
+        Node3D n = (Node3D)_pileEnemySinglePrefab.Instantiate();
         AddChild(n);
         Enemy_Base enemy = n as Enemy_Base;
         if (enemy != null)

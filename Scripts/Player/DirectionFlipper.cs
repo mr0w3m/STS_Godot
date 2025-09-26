@@ -11,8 +11,8 @@ public partial class DirectionFlipper : Node3D
     private Movement _movement;
 
 
-    private Vector3 _leftRotation = new Vector3(0, Mathf.DegToRad(-11), 0);
-    private Vector3 _rightRotation = new Vector3(0, Mathf.DegToRad(191), 0);
+    private Vector3 _leftRotation = new Vector3(0, Mathf.DegToRad(0), 0);
+    private Vector3 _rightRotation = new Vector3(0, Mathf.DegToRad(180), 0);
 
     private Quaternion _targetRotation;
     private float _rotateSpriteSpeed = 5f;

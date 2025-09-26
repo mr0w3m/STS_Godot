@@ -7,9 +7,13 @@ using System;
 public partial class Enemy_Horse : Enemy_Base
 {
     [Export] private CollisionChecker _playerCollisionCheck;
+    [Export] private CollisionChecker _playerCollisionCheck_Damage;
 
     [Export] private bool _playerFound;
     private Node3D _playerReference;
+
+
+    [Export] private int _attackDamage = 1;
     [Export] private float _attackRange = 4f;
     [Export] private float _baseMovementSpeed = 50f;
     [Export] private float _chargeMovementSpeed = 200f;
@@ -27,12 +31,16 @@ public partial class Enemy_Horse : Enemy_Base
 
     private Vector3 _cachedChargeDirection;
 
+    private bool _dealtDamage = false;
+
 
     public override void _Ready()
     {
         base._Ready();
         _playerCollisionCheck.Collided += FoundPlayer;
         _playerCollisionCheck.ExitedCollider += NoMorePlayer;
+
+        _playerCollisionCheck_Damage.Collided += TryDamage;
     }
 
     public override void _Process(double delta)
@@ -90,6 +98,7 @@ public partial class Enemy_Horse : Enemy_Base
                         //ChargeEndEnd
                         _chargeEndTimer = _chargeEndTimeSet;
                         _chargeState = 0;
+                        _dealtDamage = false;
                     }
                 }
             }
@@ -108,6 +117,26 @@ public partial class Enemy_Horse : Enemy_Base
         _chargeMoveTimer = _chargeMoveTimeSet;
         _chargeEndTimer = _chargeEndTimeSet;
         _movement.OverrideMovementSpeed(_baseMovementSpeed);
+        _dealtDamage = false;
+    }
+
+    private void TryDamage(Node3D body)
+    {
+        if (body.IsInGroup("Player") && _chargeState == 1 && !_dealtDamage)
+        {
+            if (_playerReference != null)
+            {
+                foreach (Node n in _playerReference.GetChildren())
+                {
+                    Health hp = n as Health;
+                    if (hp != null)
+                    {
+                        hp.LoseHP(_attackDamage);
+                        _dealtDamage = true;
+                    }
+                }
+            }
+        }
     }
 
     private void FoundPlayer(Node3D body)

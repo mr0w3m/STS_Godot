@@ -25,13 +25,13 @@ size = Vector3(0.4248047, 0.73046875, 0.23535156)
 height = 0.5
 radius = 3.0
 
-[node name="Enemy_PileSingle" type="Node" node_paths=PackedStringArray("_movement", "_playerCheck", "health")]
+[node name="Enemy_PileSingle" type="Node3D" node_paths=PackedStringArray("_playerCheck", "health", "_movement")]
 script = ExtResource("1_fg555")
-_movement = NodePath("Movement_RigidBody3D")
 _playerCheck = NodePath("Movement_RigidBody3D/PlayerCheck_Area3D")
 _attackDamage = 1
 _timeBetweenAttacks = 2.0
 health = NodePath("Movement_RigidBody3D/PileSingle_HP")
+_movement = NodePath("Movement_RigidBody3D")
 
 [node name="Movement_RigidBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.278896, 0, -0.56312513)

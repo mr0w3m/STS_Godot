@@ -21,7 +21,7 @@ radius = 3.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_i60v8"]
 size = Vector3(1.6474609, 1.0609131, 0.31640625)
 
-[node name="Enemy_Pile" type="Node" node_paths=PackedStringArray("_playerCollisionCheck", "health", "_movement")]
+[node name="Enemy_Pile" type="Node3D" node_paths=PackedStringArray("_playerCollisionCheck", "health", "_movement")]
 script = ExtResource("1_uivv6")
 _playerCollisionCheck = NodePath("Movement_RigidBody3D/DirectionFlipper_Node3D/PlayerCheck_Area3D")
 _pileEnemySinglePrefab = ExtResource("2_3n1wk")
